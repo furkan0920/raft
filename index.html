@@ -271,7 +271,25 @@
         }
       };
 
+      function getLanguageFromSwitcher() {
+        var switcherButton = document.querySelector('.language-current');
+        if (!switcherButton) {
+          return null;
+        }
+
+        var label = (switcherButton.textContent || '').toUpperCase();
+        if (label.indexOf('TR') !== -1) return 'tr';
+        if (label.indexOf('EN') !== -1) return 'en';
+        if (label.indexOf('RU') !== -1) return 'ru';
+        return null;
+      }
+
       function resolveLanguage() {
+        var fromSwitcher = getLanguageFromSwitcher();
+        if (fromSwitcher) {
+          return fromSwitcher;
+        }
+
         var saved = (localStorage.getItem('i18nextLng') || navigator.language || 'tr').toLowerCase();
         var shortCode = saved.split('-')[0];
         return whatsappByLanguage[shortCode] ? shortCode : 'tr';
