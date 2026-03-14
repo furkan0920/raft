@@ -107,5 +107,10 @@
     "address": "Adres",
     "phone": "Telefon Numarası",
     "email": "Mail Adresi"
+  },
+  "whatsapp": {
+    "message": "Merhaba, Antalya rafting ve macera turları hakkında bilgi almak istiyorum.",
+    "tooltip": "WhatsApp ile Rezervasyon Yap",
+    "alt": "WhatsApp ile iletişime geç"
   }
 }
